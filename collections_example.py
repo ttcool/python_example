@@ -100,3 +100,46 @@ print 'Right rotation:',d
 d = collections.deque(xrange(10))
 d.rotate(-2)
 print 'Left rotation:',d
+
+bob = ('Bob',30,'male')
+print 'Representation:',bob
+
+jane = ('Jane',29,'female')
+print '\nField by index:',jane[0]
+
+print '\nFields by index:'
+for p in [bob,jane]:
+    print '%s is a %d year old %s' % p
+
+Person = collections.namedtuple('Person','name age gender')
+
+print 'Type of Person:',type(Person)
+
+bob = Person(name='Bob',age=30,gender='male')
+print '\nRepresentation:',bob
+
+jane = Person(name='jane',age=29,gender='female')
+print '\nField by name:',jane.name
+
+print '\nFields by index:'
+for p in [bob,jane]:
+    print '%s is a %d year old %s' % p
+
+print 'Regular dictionary:'
+d = {}
+d['a'] = 'A'
+d['b'] = 'B'
+d['c'] = 'C'
+
+for k,v in d.items():
+    print k,v
+
+print '\nOrderedDict:'
+
+d = collections.OrderedDict()
+d['a'] = 'A'
+d['b'] = 'B'
+d['c'] = 'C'
+
+for k,v in d.items():
+    print k,v
