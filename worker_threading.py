@@ -9,9 +9,10 @@ def compute():
 workers = [threading.Thread(target=compute) for x in range(8)]
 
 for worker in workers:
+    worker.setDaemon(True)
     worker.start()
-
-for worker in workers:
     worker.join()
+#for worker in workers:
+#    worker.join()
 
 print("Results: %s" % results)
